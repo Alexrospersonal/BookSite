@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/adminPanel.css">
+</head>
+
+<body class="gradient-custom">
+    <header class="header_container">
+        <div class="inner_container">
+            <div class="header__login">Бібліотека<span>++</span></div>
+            <div class="header__login">Адмін панель</div>
+            <div class="header__logout"><button class="logout" onclick="logout()">ВИХІД</button></a></div>
+        </div>
+    </header>
+    <section class="main_container">
+        <div class="books_outer_container">
+            <h2>Список книг:</h2>
+            <div class="list_container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Зоб.</th>
+                            <th scope="col">Назва</th>
+                            <th scope="col">Автори</th>
+                            <th scope="col">Рік</th>
+                            <th scope="col">Дії</th>
+                            <th scope="col">Кліки</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{book_list}}
+                        <!-- <tr>
+                            <td><img src="/images/default_book_title_min.jpg" alt="" srcset=""></td>
+                            <td>СИ++ И КОМПЬЮТЕРНАЯ ГРАФИКА</td>
+                            <td>Марк Саммерфильд Брюс Эккель</td>
+                            <td>2007</td>
+                            <td><a href="http://">Видалити</a></td>
+                            <td>4</td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+            <nav aria-label="Page navigation example">
+
+                <ul class="pagination">
+                    {{pagination}}
+                </ul>
+            </nav>
+        </div>
+        <div class="books_add_container">
+            <h2>Додати книгу:</h2>
+            <form action="/admin/api/v1/" method="post" class="book_form">
+                <div class="input_container">
+                    <label for="title">Назва:</label>
+                    <input type="text" name="title" id="title">
+                </div>
+                <div class="input_container">
+                    <label for="year">Рік:</label>
+                    <input type="text" name="year" id="year">
+                </div>
+                <div class="input_container">
+                    <label for="year">ISBN:</label>
+                    <input type="text" name="isbn" id="isbn">
+                </div>
+                <div class="input_container">
+                    <label for="year">Сторінки:</label>
+                    <input type="text" name="pages" id="pages">
+                </div>
+                <div class="input_container">
+                    <label for="author_1">Автор 1:</label>
+                    <input type="text" name="author_1" id="author_1">
+                </div>
+                <div class="input_container">
+                    <label for="author_2">Автор 2:</label>
+                    <input type="text" name="author_2" id="author_2">
+                </div>
+                <div class="input_container">
+                    <label for="author_3">Автор 3:</label>
+                    <input type="text" name="author_3" id="author_3">
+                </div>
+                <div class="describe_image_container">
+                    <div class="input_container">
+                        <label for="describe">Опис:</label>
+                        <textarea name="describe" id="describe" cols="34" rows="9" style="resize: none;"></textarea>
+                    </div>
+                    <img id="image-preview" alt="Image Preview" src="/images/default_book_title.jpg">
+                </div>
+                <div class="input_container file-input-wrapper">
+                    <label for="download_img">ЗАГРУЗИТИ ЗОБРАЖЕННЯ</label>
+                    <input type="file" name="download_img" id="download_img" onchange="previewImage()">
+                </div>
+                <input type="submit" value="НАДІСЛАТИ">
+            </form>
+        </div>
+    </section>
+    <script>
+        function logout() {
+            fetch('/admin/api/v1/', {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Basic xxxxsd32423',
+                },
+                credentials: 'include'
+            })
+                .then(response => {
+                    if (response.status === 401) {
+                        window.location = '/admin/api/v1/';
+                    } else {
+                        console.log('');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="/js/adminPanel.js"></script>
+</body>
+
+</html>

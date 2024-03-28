@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #6a11cb;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Ubuntu", sans-serif;
+}
+
+h2 {
+    font-family: "Ubuntu", sans-serif;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header_container {
+    width: 100%;
+    height: 65px;
+    background-color: #212529;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.header__login {
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.header__login span {
+    color: #f53f08;
+}
+
+.header__login p {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.inner_container {
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logout {
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 2px;
+    border: 1px solid white;
+    color: white;
+    transition: all ease-in-out 0.3s;
+}
+
+.logout:hover {
+    background-color: transparent;
+    background-color: white;
+    color: #212529;
+}
+
+.main_container {
+    max-width: 1280px;
+    background-color: white;
+    border-radius: 2px;
+    height: calc(100vh - 115px);
+    padding: 15px;
+
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.white_container {
+    background-color: white;
+    border-radius: 2px;
+    height: 100%;
+}
+
+.inner_container {
+    height: 100%;
+}
+
+.books_outer_container {
+    flex: 2;
+    margin-right: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
+}
+
+.list_container {
+    overflow: auto;
+    overflow-x: hidden;
+    margin-bottom: 10px;
+}
+
+.books_outer_container h2 {
+    margin: 0;
+    flex: 1;
+}
+
+.books_outer_container div {
+    flex: 12;
+}
+
+.books_outer_container nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+}
+
+.books_outer_container nav ul {
+    margin: 0;
+}
+
+.books_outer_container td,
+th {
+    font-size: 14px;
+}
+
+td img {
+    width: 25px;
+    height: 45px;
+    border-radius: 2px;
+}
+
+.books_add_container {
+    height: 100%;
+    padding: 10px;
+    flex: 1;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.books_add_container h2 {
+    margin-bottom: 20px;
+}
+
+.book_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input_container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 12px;
+    font-weight: 400;
+    color: #212529;
+    margin: 0;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid #b9bfc5;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 1px solid #711ebe;
+}
+
+textarea {
+    border: none;
+    border-bottom: 1px solid #b9bfc5;
+}
+
+textarea:focus {
+    outline: none;
+    border-bottom: 1px solid #711ebe;
+}
+
+tr {
+    max-height: 20px;
+}
+
+input[type="submit"] {
+    color: white;
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1), rgba(106, 17, 203, 1));
+    height: 40px;
+    border-radius: 2px;
+    transition: background 0.3s ease-out;
+}
+
+input[type="submit"]:hover {
+    color: white;
+    background-position: 200px;
+    height: 40px;
+    border-radius: 2px;
+}
+
+input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.file-input-wrapper label {
+    text-align: center;
+    font-size: 16px;
+    display: inline-block;
+    padding: 10px 15px;
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1), rgba(106, 17, 203, 1));
+    color: #fff;
+    border-radius: 2px;
+    transition: background 0.3s ease-out;
+}
+
+.file-input-wrapper label:hover {
+    background-position: 200px;
+}
+
+.describe_image_container {
+    display: flex;
+    justify-content: baseline;
+}
+
+.describe_image_container textarea {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+#image-preview {
+    max-width: 100%;
+    max-height: 200px;
+    width: 125px;
+    /* Додано обмеження ширини */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
